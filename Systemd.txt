@@ -12,5 +12,8 @@ multi-user.target	        Boots into CLI-based multi-user system (no GUI).
 rescue.target	            Minimal recovery mode (limited functionality).
 emergency.target	        Barebones mode (only essential system utilities).
 
-
+- systemd determines the boot mode based on the default target, which can be checked using systemctl get-default. 
+- Common targets include multi-user.target (CLI-based boot) and graphical.target (GUI-based boot). 
+- The system follows dependencies defined in target unit files stored under /lib/systemd/system/. 
+- If needed, we can switch targets dynamically using systemctl set-default <target>.
 
